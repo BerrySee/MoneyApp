@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\OutcomeResource as ResourcesOutcomeResource;
+use App\Http\Resources\OutcomeResource;
 use Illuminate\Http\Request;
 use App\Outcome;
 class OutcomeController extends Controller
@@ -14,10 +14,16 @@ class OutcomeController extends Controller
      */
     public function index()
     {
-        $outcome = Outcome::get();
-        return ResourcesOutcomeResource::collection($outcome);
-    }
+        $outcome =  Outcome::get();
 
+        return  response()->json(OutcomeResource::collection($outcome));
+    }
+    public function lasts()
+    {
+        $outcome = Outcome::orderBy('date', 'desc')->paginate(5);
+
+        return response()->json(OutcomeResource::collection($outcome));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +42,8 @@ class OutcomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Outcome::create($request->all());
+        return (['message' => 'outcome was added']);
     }
 
     /**

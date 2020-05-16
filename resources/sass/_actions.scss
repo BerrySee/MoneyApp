@@ -1,0 +1,30 @@
+
+.outcome-img {
+    opacity: .5;
+    transition: all .5s ease-in-out;
+    filter: invert(21%) sepia(96%) saturate(6000%) hue-rotate(356deg) brightness(98%) contrast(118%);
+}
+.income-img {
+    opacity: .5;
+    transition: all .5s ease-in-out;
+    filter: invert(62%) sepia(72%) saturate(1072%) hue-rotate(70deg) brightness(102%) contrast(90%);
+}
+.choosen {
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    transform: scale(1.2);
+}
+li {
+    list-style-type: none;
+}
+.add-img, .delete-img, .edit-img{
+    overflow: hidden;
+
+    opacity: .5;
+}
+.add-img {
+    filter: invert(62%) sepia(72%) saturate(1072%) hue-rotate(70deg) brightness(102%) contrast(90%);
+}
+.edit-img {
+    filter: invert(76%) sepia(99%) saturate(803%) hue-rotate(359deg) brightness(94%) contrast(90%);
+}

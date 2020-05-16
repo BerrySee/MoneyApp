@@ -1,24 +1,29 @@
 <template>
+<div>
+<Header> </Header>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Home Component</div>
-
                     <div class="card-body">
-                        Welcome to Homepage
-                        <br />
+                        <h2>Welcome to Homepage</h2>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
+import Header from './Header.vue';
 export default {
-    mounted() {
-        console.log("Component mounted.");
+    components: {
+        Header
     }
 };
 </script>
+<style>
+
+</style>

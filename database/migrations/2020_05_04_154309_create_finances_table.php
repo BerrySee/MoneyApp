@@ -18,14 +18,14 @@ class CreateFinancesTable extends Migration
             $table->string('name');
             $table->string('type');
             $table->integer('amount');
-            $table->timestamps();
+            $table->timestamp('date');
         });
         Schema::create('outcome', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('type');
             $table->integer('amount');
-            $table->timestamps();
+            $table->timestamp('date');
         });
     }
 

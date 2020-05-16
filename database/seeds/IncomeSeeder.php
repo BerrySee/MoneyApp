@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class IncomeSeeder extends Seeder
 {
@@ -16,13 +17,14 @@ class IncomeSeeder extends Seeder
             'name'=>'Berci',
             'type'=>'Fizetés',
             'amount'=>30000,
-            'created_at'=>'2020-05-04'
-        ],
-        [
-            'name'=>'Vivi',
-            'type'=>'Fizetés',
-            'amount'=>40000,
-            'created_at'=>'2020-05-04'
+            'date'=> Carbon::now()
+        ]
+    );
+        DB::table('income')->insert([
+        'name'=>'Vivi',
+        'type'=>'Fizetés',
+        'amount'=>40000,
+        'date'=> Carbon::now()
         ]
     );
     }

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class OutcomeSeeder extends Seeder
 {
@@ -16,13 +17,14 @@ class OutcomeSeeder extends Seeder
             'name'=>'Berci',
             'type'=>'Autó',
             'amount'=>15000,
-            'created_at'=>'2020-05-04'
-        ],
-        [
-            'name'=>'Vivi',
-            'type'=>'Lakás',
-            'amount'=>20000,
-            'created_at'=>'2020-05-04'
+            'date'=> Carbon::now()
+        ]
+    )
+        ;DB::table('outcome')->insert([
+        'name'=>'Vivi',
+        'type'=>'Élelmiszer',
+        'amount'=>15000,
+        'date'=> Carbon::now()
         ]
     );
     }

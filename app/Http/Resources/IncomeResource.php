@@ -14,13 +14,13 @@ class IncomeResource extends JsonResource
      */
     public function toArray($request)
     {
+        $model = $this->resource;
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'type'=>$this->type,
-            'amount'=>$this->amount,
-            'date'=>$this->created_at,
-            'update_at'=>$this->update_at
+            'id'=>$model->id,
+            'name'=>$model->name,
+            'type'=>$model->type,
+            'amount'=>$model->amount,
+            'date'=>date('Y-m-d', strtotime($model->date))
         ];
     }
 }

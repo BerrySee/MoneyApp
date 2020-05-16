@@ -18,5 +18,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
-Route::resource('/outcome', 'OutcomeController');
-Route::resource('/income', 'IncomeController');

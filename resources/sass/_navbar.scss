@@ -1,0 +1,20 @@
+
+.nav-item, .navbar-brand {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    a {
+        color: white;
+    }
+    .nav-link {
+        color: white;
+        .router-link-exact-active {
+            font-weight: 800;
+    }
+    }
+    a:hover{
+        font-weight: 800;
+        color: white;
+        text-decoration: none;
+    }
+}

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +16,26 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
+Get money
+*/
+Route::get('get/outcome', 'OutcomeController@index');
+Route::get('get/income', 'IncomeController@index');
+
+/*
+Last 5 actions
+*/
+Route::get('last/outcome', 'OutcomeController@lasts');
+Route::get('last/income', 'IncomeController@lasts');
+/*
+Post money
+*/
+
+Route::post('income', 'IncomeController@store');
+Route::post('outcome', 'OutcomeController@store');
+
+/*
+Delete money
+*/
+Route::delete('income{id}', 'IncomeController@destroy');
+Route::delete('outcome{id}', 'OutcomeController@destroy');

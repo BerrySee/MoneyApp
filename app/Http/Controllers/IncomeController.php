@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\IncomeResource as ResourcesIncomeResource;
+use App\Http\Resources\IncomeResource;
 use Illuminate\Http\Request;
 use App\Income;
 
@@ -16,9 +16,15 @@ class IncomeController extends Controller
     public function index()
     {
         $income =  Income::get();
-        return  ResourcesIncomeResource::collection($income);
-    }
 
+        return  response()->json(IncomeResource::collection($income));
+    }
+    public function lasts()
+    {
+        $income = Income::orderBy('date', 'desc')->paginate(5);
+
+        return response()->json(IncomeResource::collection($income));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +43,8 @@ class IncomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Income::create($request->all());
+        return (['message' => 'income was added']);
     }
 
     /**
